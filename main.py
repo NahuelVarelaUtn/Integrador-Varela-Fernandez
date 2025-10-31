@@ -8,3 +8,9 @@ Formato unificado por país:
 def _norm(s):
     if s is None: return ""
     return str(s).strip().lower()
+
+def _to_int(value, campo, fila):
+    try:
+        return int(value)
+    except Exception:
+        raise ValueError("Fila {}: el campo '{}' debe ser entero (valor={!r})".format(fila, campo, value))
